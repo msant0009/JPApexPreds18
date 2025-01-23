@@ -7,6 +7,43 @@
 
 import SwiftUI
 
+enum APType: String, Decodable, CaseIterable, Identifiable {
+    case land
+    case air
+    case sea
+    case all
+    
+    var id: APType {
+        self
+    }
+    
+    var background: Color {
+        switch self {
+        case .land:
+            .brown
+        case .air:
+            .teal
+        case .sea:
+            .blue
+        case .all:
+            .black
+        }
+    }
+    
+    var icon: String {
+        switch self {
+        case .land:
+            "🐾"
+        case .air:
+            "🛩️"
+        case .sea:
+            "🐠"
+        case .all:
+            "🔄"
+        }
+    }
+}
+
 struct ApexPredator: Decodable, Identifiable {
     let id: Int
     let name: String
@@ -27,21 +64,6 @@ struct ApexPredator: Decodable, Identifiable {
         let sceneDescription: String
     }
     
-    enum APType: String, Decodable{
-        case land
-        case air
-        case sea
-        
-        var background: Color {
-            switch self {
-            case .land:
-                .brown
-            case .air:
-                .teal
-            case .sea:
-                .blue
-            }
-        }
-    }
+
     
 }
