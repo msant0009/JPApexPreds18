@@ -22,11 +22,9 @@ struct ContentView: View {
       
     var body: some View {
         NavigationStack{
-            List(filteredDinos){ predator in
+            List(filteredDinos){ predator in 
                 NavigationLink{
-                    Image(predator.image)
-                        .resizable()
-                        .scaledToFit()
+                    PredatorDetail(predator: predator)
                 } label: {
                 HStack{
                     //dino image
@@ -77,13 +75,13 @@ struct ContentView: View {
             }
             ToolbarItem(placement: .topBarTrailing){
                 Menu {
-                    Picker("Sort By", selection: $currentSelection) {
+                    Picker("Filter", selection: $currentSelection.animation()) {
                         ForEach(APType.allCases){type in
                             Label(type.rawValue.capitalized,
                                   systemImage: type.icon)
                         
                         }
-                    }
+                    }   
                     
                 } label: {
                     Image(systemName: "slider.horizontal.3")

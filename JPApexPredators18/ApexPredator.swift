@@ -33,13 +33,13 @@ enum APType: String, Decodable, CaseIterable, Identifiable {
     var icon: String {
         switch self {
         case .land:
-            "🐾"
+            "square.stack.3d.up.fill"
         case .air:
-            "🛩️"
+            "leaf.fill"
         case .sea:
-            "🐠"
+            "wind"
         case .all:
-            "🔄"
+            "drop.fill"
         }
     }
 }
