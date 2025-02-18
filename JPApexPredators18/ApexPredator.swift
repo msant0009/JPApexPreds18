@@ -4,7 +4,7 @@
 //
 //  Created by Mark Santoro on 1/1/25.
 //
-
+import MapKit
 import SwiftUI
 
 enum APType: String, Decodable, CaseIterable, Identifiable {
@@ -56,6 +56,10 @@ struct ApexPredator: Decodable, Identifiable {
     
     var image: String {
         name.lowercased().replacingOccurrences(of: " ", with: "")
+    }
+    
+    var location: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
     
     struct MovieScene: Decodable, Identifiable {
