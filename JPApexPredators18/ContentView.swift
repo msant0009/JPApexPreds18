@@ -37,7 +37,7 @@ struct ContentView: View {
                     VStack(alignment: .leading){
                         //dino name
                         Text(predator.name)
-                            .fontWeight(.bold)
+                            .fontWeight(.bold) 
                         
                         //dino type
                         Text(predator.type.rawValue.capitalized)

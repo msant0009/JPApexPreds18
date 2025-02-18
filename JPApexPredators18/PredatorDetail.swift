@@ -34,17 +34,51 @@ struct PredatorDetail: View {
                     
                 }// end zstack
                 
+                VStack(alignment: .leading){
+                    // dino name
+                    Text(predator.name)
+                        .font(.largeTitle)
                 
-                // dino name
+                    // current location
+                    
+                    // appears in
+                    Text("Appears in:")
+                        .font(.title3)
+                    ForEach(predator.movies, id: \.self){ movie in
+                        Text("• " + movie)
+                            .font(.subheadline)
+                    }
+                    
+                    
+                    // movie moments
+                    Text("Movie Moments")
+                        .font(.title)
+                        .padding(.top, 15)
+                    
+                    ForEach(predator.movieScenes){ scene in
+                        Text(scene.movie)
+                            .font(.title2)
+                            .padding(.vertical, 1)
+                        
+                        Text(scene.sceneDescription)
+                            .padding(.bottom, 15)
+                        
+                        
+                        
+                    }
+                    // webpage link
+                    Text("Read More...")
+                        .font(.caption)
+                    Link(predator.link, destination: URL(string:predator.link)!)
+                        .font(.caption)
+                        .foregroundStyle(.blue)
+                        
+                    
+                }
+                .padding()
+                .padding(.bottom, 15)
+                .frame(width: geo.size.width, alignment: .leading)
                 
-                // current location
-                
-                // appears in
-                
-                
-                // movie moments
-                
-                // webpage link
                 
                 
             }// end scroll view
