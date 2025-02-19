@@ -60,7 +60,7 @@ struct PredatorDetail: View {
                                     .imageScale(.large)
                                     .symbolEffect(.pulse)
                             }
-                            .annotationTitles(.hidden)
+                            .annotationTitles(.hidden)// hide dino name on image
                         }
                         .frame(height: 125)
                        
